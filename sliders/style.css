@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {   
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.slider-wrap {
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.slide:not(.active) {
+    display: none;
+}
+/* 
+.slide.active {
+    display: block;
+} */
+
+.slide > img {
+    width: 100%;
+    height: 600px;
+}
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: .25rem;
+    width: 100%;
+    display: flex;
+}
+
+.button {
+    flex: 1;
+    padding: 1rem;
+    background-color: rgba(56, 56, 56, 0.3);
+    color: white;
+    border: none;
+}
