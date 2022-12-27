@@ -30,6 +30,7 @@
             <button id="button-2" class="button">img 2</button>
             <button id="button-3" class="button">img 3</button>
             <button id="button-4" class="button">img 4</button>
+
             <button id="button-4" class="button">img 5</button>
             <button id="button-4" class="button">img 6</button>
         </div>
@@ -72,6 +73,8 @@
                         document.querySelector(`#slide-${j+1}`).classList.remove('active');
                     }
                 })
+    
+                interval = setAutoSliding();
             });
         });
 
