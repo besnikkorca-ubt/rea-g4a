@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" >
+    <title>Document</title>
+</head>
+<body>
+    <div class="slider-wrap">
+        <!-- photos -->
+        <div class="slide-container">
+             <div class="slide active" id="slide-1">
+                <img src="./Img/pht1.jpg" alt="image-1">
+            </div>
+             <div class="slide" id="slide-2">
+                <img src="./Img/pht2.jpg" alt="image-2">
+            </div>
+             <div class="slide" id="slide-3">
+                <img src="./Img/pht3.jpeg" alt="image-3">
+            </div>
+             <div class="slide" id="slide-4">
+                <img src="./Img/pht4.jpg" alt="image-4">
+            </div>
+        </div>
+        <!-- controls -->
+        <div class="controls">
+            <button id="button-1" class="button">img 1</button>
+            <button id="button-2" class="button">img 2</button>
+            <button id="button-3" class="button">img 3</button>
+            <button id="button-4" class="button">img 4</button>
+            <button id="button-4" class="button">img 5</button>
+            <button id="button-4" class="button">img 6</button>
+        </div>
+    </div>
+    <script>
+        let idx = 1
+        const slides = document.querySelectorAll('.slide');
+
+        const setAutoSliding = () => {
+            return setInterval(() => {
+                if (idx < 4) {
+                    idx++;
+                } else {
+                    idx = 1;
+                }
+
+                slides.forEach((slide, i) => {
+                    if (idx === i+1) {
+                        document.querySelector(`#slide-${i+1}`).classList.add('active');
+                    } else {
+                        document.querySelector(`#slide-${i+1}`).classList.remove('active');
+                    }
+                })
+            }, 50000000)
+        } 
+
+        let interval3 = setAutoSliding();
+
+        const buttons = document.querySelectorAll('.button');
+
+        buttons.forEach((button, i) => {
+            button.addEventListener('click', () => {
+                clearInterval(interval3);
+                idx = i + 1;
+    
+                slides.forEach((slide, j) => {
+                    if (idx === j+1) {
+                        document.querySelector(`#slide-${j+1}`).classList.add('active');
+                    } else {
+                        document.querySelector(`#slide-${j+1}`).classList.remove('active');
+                    }
+                })
+            });
+        });
+
+    </script>
+</body>
+</html>
