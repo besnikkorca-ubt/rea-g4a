@@ -30,43 +30,12 @@
             <button id="button-2" class="button">img 2</button>
             <button id="button-3" class="button">img 3</button>
             <button id="button-4" class="button">img 4</button>
+
+            <button id="button-4" class="button">img 5</button>
+            <button id="button-4" class="button">img 6</button>
         </div>
     </div>
     <script>
-        // const slide1 = document.getElementById('slide-1');
-        // const slide2 = document.getElementById('slide-2');
-        // const slide3 = document.getElementById('slide-3');
-        // const slide4 = document.getElementById('slide-4');
-        // let idx = 1;
-        
-        // setInterval(() => {
-        //     if (idx < 4) {
-        //         idx++;
-        //     } else {
-        //         idx = 0;
-        //     }
-        //     if (idx === 1) {
-        //         slide1.classList.add('active');
-        //         slide2.classList.remove('active');
-        //         slide3.classList.remove('active');
-        //         slide4.classList.remove('active');
-        //     } else if (idx === 2) {
-        //         slide2.classList.add('active');
-        //         slide1.classList.remove('active');
-        //         slide3.classList.remove('active');
-        //         slide4.classList.remove('active');
-        //     } else if (idx === 3) {
-        //         slide3.classList.add('active');
-        //         slide1.classList.remove('active');
-        //         slide2.classList.remove('active');
-        //         slide4.classList.remove('active');
-        //     } else {
-        //         slide4.classList.add('active');
-        //         slide1.classList.remove('active');
-        //         slide2.classList.remove('active');
-        //         slide3.classList.remove('active');
-        //     }
-        // }, 2500)
         let idx = 1
         const slides = document.querySelectorAll('.slide');
 
@@ -88,13 +57,13 @@
             }, 50000000)
         } 
 
-        let interval = setAutoSliding();
+        let interval3 = setAutoSliding();
 
         const buttons = document.querySelectorAll('.button');
 
         buttons.forEach((button, i) => {
             button.addEventListener('click', () => {
-                clearInterval(interval);
+                clearInterval(interval3);
                 idx = i + 1;
     
                 slides.forEach((slide, j) => {
